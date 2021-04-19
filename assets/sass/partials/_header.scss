@@ -1,0 +1,78 @@
+/*----LOGO----*/
+
+.brand {
+    padding: 0.5rem 1rem;
+    display: flex;
+    background-color: #17161b;
+    a {
+        .brand_logo {
+            display: flex;
+
+            svg {
+                width: 140px;
+
+                .mail {
+                }
+
+                .name {
+                    path {
+                        fill: white;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/*----SEARCH BOX----*/
+.search {
+    background-color: #111113;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid #2b2931;
+
+    .search_input {
+        display: flex;
+        align-items: center;
+        flex-basis: 100%;
+
+        .fa {
+        }
+
+        input {
+            flex-basis: 100%;
+            margin: 0 1rem;
+            background-color: #1e1e22;
+            color: #f2f2f2;
+            border: 0;
+            border-radius: 15px;
+        }
+    }
+
+    .search_menu {
+        position: relative;
+
+        .search_menu_toggle {
+            .fa {
+            }
+        }
+
+        .search_menu {
+            position: absolute;
+            top: calc(100% + 0.25rem);
+            right: 0;
+
+            .search_menu_items {
+                @include menu_no_bullets;
+                width: 200px;
+
+                .search_menu_item {
+                    a {
+                    }
+                }
+            }
+        }
+    }
+}
+

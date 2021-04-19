@@ -1,0 +1,438 @@
+@import "lib/vars";
+@import "lib/mixins";
+@import "lib/reboot";
+@import "lib/fontawesome/font-awesome";
+@import "lib/fontface";
+@import "lib/keyframes";
+@import "partials/aside";
+@import "partials/content";
+@import "partials/media830";
+@import "partials/tabsection";
+@import "partials/header";
+
+$corporateColor: tomato;
+
+/* {
+    border: 1px solid $corporateColor;
+}*/
+
+html,
+body {
+    font-size: 14px;
+    font-family: $font_family_base;
+    line-height: $base * 3;
+    color: $body_color;
+    min-height: 100vh;
+    background-color: #111113;
+    overflow-y: hidden; /* Hide vertical scrollbar */
+            overflow-x: hidden; /* Hide horizontal scrollbar */
+
+    color: #f2f2f2;
+
+    @media screen and (max-width: 1080px) {
+        font-size: 15px;
+    }
+}
+
+.fa {
+    color: #f2f2f2;
+}
+
+
+
+// Layout
+.gmail {
+    display: grid;
+    grid-template-columns: minmax(200px, 250px) minmax(300px, 400px) minmax(
+            500px,
+            1fr
+        );
+    grid-template-rows: auto auto 1fr;
+    height: 100vh;
+
+    .media_830 {
+        display: none;
+        visibility: hidden;
+    }
+
+    .brand {
+    }
+
+    .search {
+        .bars {
+            display: none;
+        }
+    }
+
+    .navigation {
+    }
+
+    .new_mail_cta {
+    }
+
+    .mailbox {
+        grid-area: 3 / 1 / span 1 / span 1;
+    }
+
+    .tabs {
+    }
+
+    .tab_content {
+        grid-area: 3 / 2 / span 1 / span 1;
+    }
+
+    .content {
+        grid-area: 2 / 3 / span 2 / span 1;
+        .new_mail_short {
+            display: none;
+        }
+    }
+
+    /*---------------1080-------------*/
+    @media screen and (max-width: 1105px) {
+        grid-template-columns: repeat(3, 1fr);
+        .media_830 {
+            visibility: hidden;
+        }
+        .brand {
+            grid-area: 1 / 1 / span 1 / span 1;
+            background-color: #111113;
+            
+        }
+
+        .search {
+            grid-area: 1 / 2 / span 1 / span 1;
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+            width: 400px;
+        }
+        .bars .fa {
+            display: none;
+            margin-right: 0.3rem;
+        }
+
+        .navigation {
+            grid-area: 1 / 3 / span 1 / span 2;
+        }
+
+        .new_mail_cta {
+            display: none;
+        }
+
+        .mailbox {
+            grid-area: 2 / 1 / span 2 / span 1;
+            z-index: 2;
+
+            transform: translateX(-100%);
+            transition: transform 350ms ease;
+
+            &.open {
+                transform: translateX(0%);
+            }
+        }
+
+        .tabs {
+            grid-area: 2 / 1 / span 1 / span 1;
+            padding-left: 0.3rem;
+            background-color: #17161b;
+            
+            
+               .fa.fa-users{
+                color: #4185f4;
+               }
+               .fa.fa-tag{
+                color: #33a852;
+               }
+        }
+
+        .unread_message {
+            @include no_show();
+        }
+        .tab_subtitle {
+            @include no_show();
+        }
+
+        .tab_content {
+            grid-area: 3 / 1 / span 1 / span 1;
+            padding-left: 0.3rem;
+            background-color: #17161b;
+        }
+
+        .content {
+            grid-area: 2 / 2 / span 2 / span 2;
+            padding-left: 0.3rem;
+            .mail_text_area {
+                display: none;
+            }
+
+            .new_mail_short {
+                display: flex;
+            }
+        }
+    }
+
+    /*---------------830-TABLET------------*/
+
+    @media screen and (max-width: 830px) {
+        grid-template-columns: repeat(3, 1fr);
+
+        .media_830 {
+            display: flex;
+            justify-content: space-between;
+            visibility: visible;
+            grid-area: 1 / 1 / span 1 / span 3;
+        }
+        .search_830 {
+            width: 400px;
+        }
+        .brand {
+            display: none;
+        }
+
+        .search {
+            display: none;
+        }
+        .bars .fa {
+            display: none;
+            margin-right: 0.3rem;
+        }
+
+        .navigation {
+            display: none;
+        }
+
+        .navigation_830 {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding: 0.5rem 1rem;
+
+            .navigation_items {
+                @include menu_no_bullets();
+                display: flex;
+                align-items: center;
+
+                .navigation_item {
+                    margin-left: 1rem;
+
+                    a {
+                        .fa {
+                        }
+                    }
+                }
+            }
+
+            .navigation_user {
+                margin-left: 1rem;
+                width: 50px;
+                height: 50px;
+                border-radius: 50%;
+                overflow: hidden;
+
+                img {
+                    @include full_image();
+                }
+            }
+        }
+
+        .new_mail_cta {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+        }
+
+        .mailbox {
+            grid-area: 2 / 1 / span 2 / span 1;
+            z-index: 2;
+            background-color: #fff;
+            transform: translateX(-100%);
+            transition: transform 350ms ease;
+
+            &.open {
+                transform: translateX(0%);
+            }
+        }
+
+        .tabs {
+            grid-area: 2 / 1 / span 1 / span 3;
+            padding-left: 0.3rem;
+            display: flex;
+            justify-content: space-evenly;
+        }
+
+        .tab_content {
+            grid-area: 3 / 1 / span 1 / span 1;
+            padding-left: 0.3rem;
+        }
+
+        .content {
+            grid-area: 3 / 2 / span 2 / span 2;
+            padding: 0;
+            margin-left: 0.3rem;
+            .mail_text_area {
+                display: none;
+            }
+        }
+    }
+
+    /*---------------720-TABLET------------*/
+
+    @media screen and (max-width: 720px) {
+        grid-template-columns: repeat(2, 1fr);
+
+       
+        .search_830 {
+            width: 325px;
+        }
+
+        .navigation_830 {
+            .navigation_items {
+                span.fa.fa-th {
+                    display: none;
+                }
+            }
+        }
+
+        .brand {
+            display: none;
+        }
+
+        .search {
+            display: none;
+        }
+
+        .bars .fa {
+            display: none;
+            margin-right: 0.3rem;
+        }
+
+        .navigation {
+            display: none;
+        }
+
+        .new_mail_cta {
+            position: fixed;
+            bottom: 1rem;
+            right: 1rem;
+            a {
+                .label {
+                    display: none;
+                }
+            }
+        }
+
+        .mailbox {
+            grid-area: 2 / 1 / span 2 / span 1;
+            z-index: 2;
+            background-color: #fff;
+            transform: translateX(-100%);
+            transition: transform 350ms ease;
+
+            &.open {
+                transform: translateX(0%);
+            }
+        }
+
+        .tabs {
+            grid-area: 2 / 1 / span 1 / span 2;
+        }
+
+        .tab_content {
+            grid-area: 3 / 1 / span 1 / span 2;
+        }
+
+        .content {
+            visibility: hidden;
+        }
+
+        .mail_input {
+            position: relative;
+        }
+    }
+
+    /*---------------490-MOVIL------------*/
+
+    @media screen and (max-width: 490px) {
+        grid-template-columns: repeat(2, 1fr);
+
+        .brand_logo_830 {
+            display: none;
+        }
+
+        .search_830 {
+            grid-area: 1 / 1 / span 1 / span 1;
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+            width: 285px;
+            .search_input {
+                display: flex;
+                align-items: center;
+                flex-basis: 100%;
+
+                .bars .fa {
+                    display: flex;
+                    margin-right: 0.3rem;
+                }
+                .fa {
+                    display: none;
+                }
+
+                input {
+                    flex-basis: 100%;
+                    margin: 0;
+                }
+            }
+            .search_menu {
+                display: none;
+            }
+        }
+        .navigation_830 {
+            .navigation_items {
+                display: none;
+            }
+        }
+
+        .new_mail_cta {
+            a {
+                .label {
+                    display: none;
+                }
+            }
+        }
+
+        .mailbox {
+            grid-area: 2 / 1 / span 2 / span 1;
+            z-index: 2;
+            background-color: #fff;
+            transform: translateX(-100%);
+            transition: transform 350ms ease;
+
+            &.open {
+                transform: translateX(0%);
+            }
+        }
+
+        .tabs {
+            grid-area: 2 / 1 / span 1 / span 2;
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+        }
+
+        .tab_content {
+            grid-area: 3 / 1 / span 1 / span 2;
+            padding-left: 0.3rem;
+            padding-right: 0.3rem;
+            
+        }
+
+        .content {
+            visibility: hidden;
+        }
+
+        .mail_input {
+            position: relative;
+        }
+    }
+}
+
+/*---------------FINAL RESPONSIVE--------------*/

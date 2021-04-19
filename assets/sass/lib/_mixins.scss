@@ -1,0 +1,42 @@
+/*----------MIXINS---------*/
+
+@mixin hover {
+    color: white;
+}
+
+@mixin yellow_star {
+    color: rgb(255, 208, 0);
+}
+
+
+@mixin blue_tag {
+    background-color: #4185f4;
+}
+
+
+@mixin green_tag {
+    background-color: #33a852;
+}
+
+@mixin menu_no_bullets {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+@mixin full_image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+@mixin no_show {
+    display: none;
+}
+
+@mixin show {
+    display: flex;
+}
+
+/*------------------*/

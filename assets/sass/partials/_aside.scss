@@ -1,0 +1,190 @@
+
+
+
+/*----MENU NAVEGACION----*/
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0.5rem 1rem;
+    background-color: #111113;
+    border-bottom: 2px solid #2b2931;
+
+    .navigation_items {
+        @include menu_no_bullets();
+        display: flex;
+        align-items: center;
+
+        .navigation_item {
+            margin-left: 1rem;
+
+            a {
+                .fa {
+                }
+            }
+        }
+    }
+
+    a {
+        .navigation_user {
+            margin-left: 1rem;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+
+            img {
+                @include full_image();
+            }
+        }
+    }
+}
+
+
+/*----------ASIDE----------*/
+
+
+
+.mailbox {
+    background-color: #17161b;
+    display: flex;
+    flex-direction: column;
+    .mailbox_section {
+        .menu_mailbox_main_items {
+            @include menu_no_bullets();
+            padding: 0.5rem 0;
+            .item_link {
+                margin-bottom: 0.5rem;
+
+                .menu_mailbox_main_item {
+                    display: flex;
+                    align-items: center;
+                    padding: 0.25rem 1rem 0.25rem 1rem;
+                    width: 95%;
+                    margin-bottom: 0.5rem;
+                    border-radius: 0 1rem 1rem 0;
+                    &:hover {
+                        background-color: rgb(88, 88, 88);
+                    }
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    .icon {
+                        .fa {
+                        }
+                    }
+
+                    .label {
+                        flex-basis: 100%;
+                        margin: 0 1rem;
+                    }
+
+                    .amount {
+                    }
+                }
+                .special_item {
+                    background-color: rgb(88, 88, 88);
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+    .mailbox_section_categories {
+        padding: 0.75rem 0;
+        display: flex;
+
+        .categories {
+            display: flex;
+            padding: 0.25rem 1rem 0.25rem 1rem;
+            width: 95%;
+            .icon_special {
+                padding-left: 1.25rem;
+                .fa {
+                }
+            }
+
+            .label {
+                flex-basis: 100%;
+                margin-left: 1rem;
+            }
+        }
+    }
+
+    .mailbox_section_folders {
+        padding: 0.5rem 0;
+        .folders_title {
+            display: flex;
+            justify-content: space-between;
+            padding: 0.25rem 1rem 0.25rem 1rem;
+            width: 95%;
+            border-radius: 0 1rem 1rem 0;
+
+            span {
+            }
+            .icon {
+            }
+        }
+        .menu_mailbox_folder_items {
+            @include menu_no_bullets();
+            padding: 0.5rem 0;
+            .item_link {
+                margin-bottom: 0.5rem;
+                .menu_mailbox_main_item {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    padding: 0.25rem 1rem 0.25rem 1rem;
+                    width: 95%;
+                    margin-bottom: 0.5rem;
+                    border-radius: 0 1rem 1rem 0;
+
+                    &:last-child {
+                        margin: 0;
+                    }
+
+                    .icon {
+                        .fa {
+                        }
+                        .green_folder {
+                            color: #009788;
+                        }
+                        .blue_folder {
+                            color: #3f51b5;
+                        }
+                        .purple_folder {
+                            color: #673bb7;
+                        }
+                    }
+
+                    .label {
+                        flex-basis: 100%;
+                        margin: 0 1rem;
+                    }
+                    .number {
+                    }
+                }
+            }
+        }
+    }
+
+    .mailbox_hide_menu {
+        margin-top: auto;
+        a {
+            display: flex;
+
+            .hide_menu_box {
+                display: flex;
+                .icon {
+                    margin: 0 1rem;
+                    & :hover {
+                        font-weight: bold;
+                    }
+                }
+                .label {
+                    flex-basis: 100%;
+                }
+            }
+        }
+    }
+}

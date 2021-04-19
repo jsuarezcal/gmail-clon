@@ -1,0 +1,100 @@
+/*----HEADER MEDIA 830----*/
+
+.media_830 {
+    display: flex;
+    background-color: #111113;
+
+    .brand_logo_830 {
+        padding: 0.5rem 1rem;
+
+        img {
+            margin-top: 0.2rem;
+            width: 45px;
+        }
+    }
+
+    .search_830 {
+        display: flex;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        background-color: #111113;
+        .search_input {
+            display: flex;
+            align-items: center;
+            flex-basis: 100%;
+
+            .fa {
+            }
+
+            input {
+                flex-basis: 100%;
+                margin: 0 1rem;
+                padding-left: 1rem;
+                background-color: #1e1e22;
+                color: #f2f2f2;
+                border: 0;
+                border-radius: 15px;
+            }
+        }
+
+        .search_menu {
+            position: relative;
+
+            .search_menu_toggle {
+                .fa {
+                }
+            }
+
+            .search_menu {
+                position: absolute;
+                top: calc(100% + 0.25rem);
+                right: 0;
+
+                .search_menu_items {
+                    @include menu_no_bullets;
+                    width: 200px;
+
+                    .search_menu_item {
+                        a {
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .navigation_830 {
+        background-color: #111113;
+    }
+}
+/*----FINAL HEADER MEDIA 830----*/
+
+
+/*----BOTÓN NUEVO MAIL----*/
+.new_mail_cta {
+    padding: 0.25rem;
+    display: flex;
+    align-items: center;
+    color: white;
+
+    background-color: #17161b;
+    a {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0.5rem 1.5rem;
+        border-radius: 999999px;
+        background-color: #4185f4;
+        margin-left: 1rem;
+        margin-right: 1rem;
+
+        .label {
+            margin-right: 4rem;
+            color: white;
+        }
+
+        .icon {
+            color: white;
+        }
+    }
+}

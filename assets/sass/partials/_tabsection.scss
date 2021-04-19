@@ -1,0 +1,126 @@
+@mixin menu_no_bullets {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+
+/*----SECCIÓN LISTA MENSAJES----*/
+.tabs {
+    display: flex;
+    justify-content: space-between;
+    background-color: #111113;
+    padding: 1.5rem 1rem;
+    .tab {
+        display: flex;
+        margin-right: 0.5rem;
+
+        &:hover {
+            border-bottom: 2px solid #f5f3fa;
+        }
+        margin-bottom: 0;
+        .tab_icon {
+            margin-right: 0.5rem;
+        }
+        .tab_label {
+            .tab_title {
+                display: flex;
+                span {
+                    margin-right: 1rem;
+                }
+
+                a {
+                    border-radius: 50px;
+                    display: flex;
+                    align-items: center;
+
+                    .new_tag {
+                        .unread_message {
+                            color: white;
+                            margin: 0;
+                            padding: 0.5rem;
+                        }
+                    }
+                }
+                .a_green_tag {
+                    @include green_tag();
+                }
+                .a_blue_tag {
+                    @include blue_tag();
+                }
+            }
+            .tab_subtitle {
+                font-size: 0.8rem;
+            }
+        }
+    }
+}
+
+/*MESSAGE LIST*/
+section.tab_content {
+    overflow: auto;
+    background-color: #111113;
+    
+        .mails {
+            display: flex;
+            padding: 1rem 1rem;
+            border-bottom: 2px solid #2b2931;
+            &:hover {
+                background-color: #302f34;
+                border-radius: 15px;
+            }
+            .user_pic {
+                padding-right: 1rem;
+                .pic {
+                    width: 50px;
+                    height: 50px;
+                    border-radius: 50%;
+                    overflow: hidden;
+                    img {
+                        @include full_image();
+                    }
+                }
+            }
+            .mail_info {
+                .mail_details {
+                    display: flex;
+                    justify-content: space-between;
+                    .mail_title {
+                        font-size: 18px;
+                    }
+                    .mail_title_info {
+                        display: flex;
+                        .mail_icon {
+                            margin-right: 0.5rem;
+                        }
+                        .mail_time {
+                        }
+                    }
+                }
+                .mail_preview {
+                    display: flex;
+
+                    .mail_message {
+                        .mail_subject {
+                            font-weight: bold;
+                        }
+                        p {
+                            padding: 0;
+                            margin: 0;
+                        }
+                    }
+                    .star {
+                        margin-top: 1.8rem;
+                        &:hover {
+                            @include yellow_star();
+                        }
+                    }
+                    .star_click, 
+                    .relleno{
+                        @include yellow_star();
+                    }
+                }
+            }
+        }
+    
+}
